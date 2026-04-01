@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deleted Items</title>
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background-image: url(j.jpg) ;
+           
+        }
+
+        table {
+            margin: auto;
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th, td {
+            border: 1px solid brown;
+            padding: 10px;
+        }
+
+        th {
+            background:pink;
+            color:black;
+        }
+
+        button {
+            margin-top: 25px;
+            padding: 10px;
+        }
+        h2{
+            color: black;
+            margin:auto;
+        }
+        .btd{
+            background-color:skyblue;
+            border: white
+        }
+        .btk{
+            background-color: skyblue;
+            border: white;
+        }
+        .bta{
+            background-color: red;
+            border: white;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Deleted Items</h2>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody id="deletedTable"></tbody>
+</table>
+
+<button class="btd" onclick="goBack()">Back</button>
+<button class= "btk" onclick="clearDeleted()">Clear All</button>
+
+<script>
+    function loadDeleted() {
+        let deleted = JSON.parse(localStorage.getItem("deletedItems")) || [];
+        let table = document.getElementById("deletedTable");
+
+        table.innerHTML = "";
+
+        deleted.forEach((item, index) => {
+            table.innerHTML += `
+                <tr>
+    <td>${item.name}</td>
+    <td>${item.qty}</td>
+    <td>
+        <button class = "bta" onclick="deleteForever(${index})">Delete</button>
+    </td>
+    </tr>
+            `;
+        });
+    }
+
+    function goBack() {
+        window.location.href = "index.html";
+    }
+    function clearDeleted() {
+    if (confirm("Sure gud ka?")) {
+        localStorage.removeItem("deletedItems"); // delete tanan
+        loadDeleted(); // refresh table
+    }
+}
+function deleteForever(index) {
+    let deleted = JSON.parse(localStorage.getItem("deletedItems")) || [];
+
+    if (confirm("Sure ka?")) {
+        deleted.splice(index, 1); // tangtang usa ka item
+        localStorage.setItem("deletedItems", JSON.stringify(deleted));
+        loadDeleted(); // refresh table
+    }
+}
+
+    loadDeleted();
+</script>
+
+</body>
+</html>
