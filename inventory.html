@@ -120,10 +120,10 @@
     let item = inventory[index];
 
     // prompt user para sa bag-ong name ug quantity
-    let newName = prompt("Update Item Name:", item.name);
+    let newName = prompt("New Item Name:", item.name);
     if (newName === null || newName === "") return; // cancel or empty
 
-    let newQty = prompt("Update Quantity:", item.qty);
+    let newQty = prompt(" Quantity:", item.qty);
     if (newQty === null || newQty === "" || isNaN(newQty)) return; // cancel or invalid
 
     // update sa array
