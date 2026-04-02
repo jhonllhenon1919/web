@@ -64,9 +64,6 @@
         .updateItem{
             background: green;
         }
-        .viewDeleted{
-            background: maroon;
-        }
     </style>
 </head>
 
@@ -79,7 +76,6 @@
     <input type="number" id="qty" placeholder="Quantity">
 
     <button onclick="addItem()">Add Item</button>
-    <button  class ="viewDeleted" onclick ="viewDeleted()">View Deleted</button>
    
     
     <table>
@@ -164,9 +160,6 @@ function deleteItem(index) {
     localStorage.setItem("deletedItems", JSON.stringify(deleted));
 
     // redirect padulong deleted page
-    window.location.href = "deleted.html";
-}
-function viewDeleted (){
     window.location.href = "deleted.html";
 }
 </script>
