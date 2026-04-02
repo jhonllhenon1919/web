@@ -64,6 +64,9 @@
         .updateItem{
             background: green;
         }
+        .viewDeleted{
+            background: maroon;
+        }
     </style>
 </head>
 
@@ -76,7 +79,7 @@
     <input type="number" id="qty" placeholder="Quantity">
 
     <button onclick="addItem()">Add Item</button>
-     <button onclick="viewDeleted()">View Deleted Items</button>
+    <button onclick="viewDeleted()">View Deleted Item</button>
    
     
     <table>
@@ -160,10 +163,11 @@ function deleteItem(index) {
     // save balik
     localStorage.setItem("deletedItems", JSON.stringify(deleted));
 
-   displayItems();
+    displayItems();
 }
-    function viewDeleted(){
-         window.location.href = "deleted.html";
+function viewDeleted(){
+     window.location.href = "deleted.html";
+}
 </script>
 
 </body>
