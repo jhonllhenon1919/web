@@ -141,6 +141,7 @@
                     <td>
                          <button class="updateItem" onclick="updateItem(${index})">Update Item</button>
                         <button class="delete" onclick="deleteItem(${index})">Delete</button>
+                        <button class ="viewDeleted" onclick="viewDeleted(${index})">View Deleted</button>
                     </td>
                 </tr>
             `;
@@ -159,6 +160,9 @@ function deleteItem(index) {
     localStorage.setItem("deletedItems", JSON.stringify(deleted));
 
     // redirect padulong deleted page
+    window.location.href = "deleted.html";
+}
+function viewDeleted (){
     window.location.href = "deleted.html";
 }
 </script>
