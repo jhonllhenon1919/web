@@ -61,7 +61,7 @@
         .delete {
             background: red;
         }
-        .updateItem{
+        .editItem{
             background: green;
         }
         .viewDeleted{
@@ -115,7 +115,7 @@
         document.getElementById("name").value = "";
         document.getElementById("qty").value = "";
     }
-    function updateItem(index) {
+    function editItem(index) {
     // kuha ang item nga i-update
     let item = inventory[index];
 
@@ -144,7 +144,7 @@
                     <td>${item.name}</td>
                     <td>${item.qty}</td>
                     <td>
-                         <button class="updateItem" onclick="updateItem(${index})">Update Item</button>
+                         <button class="editItem" onclick="editItem(${index})">Edit</button>
                         <button class="delete" onclick="deleteItem(${index})">Delete</button>
                     </td>
                 </tr>
