@@ -76,6 +76,7 @@
     <input type="number" id="qty" placeholder="Quantity">
 
     <button onclick="addItem()">Add Item</button>
+     <button onclick="viewDeleted()">View Deleted Items</button>
    
     
     <table>
@@ -159,9 +160,10 @@ function deleteItem(index) {
     // save balik
     localStorage.setItem("deletedItems", JSON.stringify(deleted));
 
-    // redirect padulong deleted page
-    window.location.href = "deleted.html";
+   displayItems();
 }
+    function viewDeleted(){
+         window.location.href = "deleted.html";
 </script>
 
 </body>
