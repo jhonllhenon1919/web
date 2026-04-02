@@ -76,6 +76,7 @@
     <input type="number" id="qty" placeholder="Quantity">
 
     <button onclick="addItem()">Add Item</button>
+    <button class ="viewDeleted()">View Deleted</button>
     
     <table>
         <thead>
@@ -141,7 +142,6 @@
                     <td>
                          <button class="updateItem" onclick="updateItem(${index})">Update Item</button>
                         <button class="delete" onclick="deleteItem(${index})">Delete</button>
-                        <button class ="viewDeleted" onclick="viewDeleted(${index})">View Deleted</button>
                     </td>
                 </tr>
             `;
